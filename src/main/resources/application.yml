@@ -1,0 +1,16 @@
+server:
+  port: 8081  # Client application runs on port 8081
+
+spring:
+  config:
+    import: "configserver:"  # Import configuration from Config Server
+
+  cloud:
+    config:
+      uri: http://localhost:8082  # The URI of your Config Server (running on port 8082)
+      label: main  # Optional: specify the branch in the Git repo (main in this case)
+      fail-fast: true
+
+  main:
+    banner-mode: console
+
